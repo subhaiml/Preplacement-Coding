@@ -3,7 +3,7 @@
 
 int main() {
     char str[100];
-    char news[100]; // stack
+    char news[100];
     int i = 0, top = -1;
 
     printf("Enter a parenthesis format: ");
@@ -13,20 +13,20 @@ int main() {
     int l = strlen(str);
 
     for (i = 0; i < l; i++) {
-        // If opening bracket, push to stack
+        
         if (str[i] == '(' || str[i] == '{' || str[i] == '[') {
             news[++top] = str[i];
         }
-        // If closing bracket, check stack top
+            
         else if (str[i] == ')' || str[i] == '}' || str[i] == ']') {
-            if (top == -1) { // no opening to match
+            if (top == -1) { 
                 printf("Invalid Parenthesis!\n");
                 return 0;
             }
             if ((str[i] == ')' && news[top] == '(') ||
                 (str[i] == '}' && news[top] == '{') ||
                 (str[i] == ']' && news[top] == '[')) {
-                top--; // matched ? pop
+                top--; 
             } else {
                 printf("Invalid Parenthesis!\n");
                 return 0;
@@ -41,4 +41,5 @@ int main() {
     }
     return 0;
 }
+
 
